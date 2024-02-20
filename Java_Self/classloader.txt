@@ -1,0 +1,21 @@
+Class Loader: 
+1. Class loader is a subsystem of JVM that is used to load class files from physical file location. 
+2. Actually JVM will call the Class loader to load the byte code into the JVM memory 
+3. Class loader will take the .class file byte codes into the memory but before load into the 
+JVM memory, it will follow certain set of procedure
+
+-> BootStrap ClassLoader(Native class loader):
+>BootStrap class Loader is the root class loader (Ultimate class loader / promotial class loader. 
+>Actually BootStrap class loader is the parent class loader for remaining two class loader. 
+>BootStrap class loader will load all the core JDK libraries and all the common environment which help other class loader to load the all functionalities. 
+>BootStrap class loader directory is “Java_Home/jdk/bin”.
+
+-> Extension Class Loader(Java class loader):
+>It is the child class loader of Bootstrap class loader. 
+>It’s not a native class loader it is a java class loader by implementation from Bootstrap class loader. 
+>It loads the classes from two different locations. (a. JRE/lib/ext and b.Java.ext.dirs (System variable / System Properties))
+
+-> Application ClassLoader(java Class Loader)
+>It is the child class loader of Extension class loader.
+>It’s not a native class loader it is a java class loader Extension class loader. 
+>It loads the classes from (a.-classpath b.-cp c.set CLASSPATH d.Manifest)

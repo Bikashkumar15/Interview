@@ -1,0 +1,86 @@
+Git bash commands
+------------------
+init
+clone
+add
+status
+commit
+push
+pull
+checkout
+reset
+log 
+rm 
+branch
+merge
+rebase
+stash
+--------------------------------------
+git help- it provide frequently used several git command
+git help <cmd-name> - it opens documnetation of  particular command
+git init - > it is used to create empty repository or re-initialize existing repo
+git status -> this command will display status of current repo
+staged files->files which are added and they are ready to commit
+un-staged files-> modified files will be displayed here,we need to stage these files to commit
+un-tracked files -> Newly created files, we need stage them to commit
+git add -> this command is used to add file to staging area.
+   Syntax: git add <file-name>
+ 		git add Demo.java
+   Syntax: git add --a (to add all files at a time)
+git rm -> This command is used to un-stage newly created files
+   Syntax: git rm --cached <filename>
+                git add Demo.java
+   Syntax: git rm --chached *  (to un-stage all files)
+git commit -> this command is used to commit our changes to git local repo
+   Syntax: git commit -m 'initial commit'
+ Note: when we execute commit command it will consider all the files which are in staging area.
+ Note: git local repo will be available in our machine only
+
+to commit our files to remote repository we should execute below commands
+1. git remote add <repo-url> (this requires only first time)
+2. git push -u origin master (This is used to move cheges from local to central)
+
+
+git reset: it is used to unstage a file
+   Syntax: git reset HEAD <file-name>
+
+git chechout: it is used to discard changes done in a file
+   Syntax: git chechout --<file-name>
+
+
+
+
+When we create git repo in git hub we will get master branch by defalut
+ to support parallel development we need to have branches in git repo
+->generally in realtime we will create several branches like below
+   master, develop,feature,qa,uat,release
+
+-> git clone -b <branch name> <repo-url>
+
+in git hub account we can create branches in repo
+-> clone branch from repo
+-> make changes and push your changes to branch which you created for your changes to master branch
+ -> to merge  changes from one branch to another branch we will create 'Pull Request'
+-> when we execute PR, git hub compare source branch and target branch and it will confirm can we merge these branches or not.
+
+-> if status is 'able to merge' then execute pull request and merge changes.
+-> after PR execution got completed, we can delete that new branch which we created for our story.
+
+git fetch- get notification of remote files are changed.
+git merge - to pull changes file from remote to local
+
+
+or 
+
+git pull  
+
+
+
+
+
+
+
+
+
+
+

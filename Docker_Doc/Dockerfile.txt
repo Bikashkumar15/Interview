@@ -1,0 +1,156 @@
+Dockerfile
+----------------------------------------
+FROM node:20            [--> specify version of node
+
+WORKDIR /myapp
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm","start"]
+
+
+
+----------------------------
+
+RUN DOCKER  file 
+> docker build .
+after build docker image created.
+
+> docker image ls
+showing list of docker image files
+
+> docker run <image id>
+run docker image
+
+How to stop docker running image
+> docker ps
+check the list of docker image
+> docker stop <names>
+stop docker image
+
+how to run docker image on our local environment port
+ > docker run -p 3000:3000 <image id>
+ now you can run localhot:3000 on browser
+
+
+ ------------------------------------------
+
+
+ how to run docker image in ditached mode.(means we can run docker backgroud and use the same terminal for other commads)
+ > docker run -d -p 3000:3000 <image id>
+
+ > docker ps
+ check the list of docker image and check STATUS i s up or down
+
+ ---------------------------------------------
+ Running multiple container
+> docker run -d -p 3000:3000 <image id>
+> docker run -d -p 3001:3000 <image id>
+> docker run -d -p 3002:3000 <image id>
+
+how to check all images status
+
+> docker ps -a
+it will show all running created exited image status
+
+>docker rm <name> / docker rm <name> <name> <anme>
+remove docker container / remove multiple docker container
+
+Q. i want to remove docker image whenever i stop the docker instance.
+> docker run -d --rm -p 3000:3000 <image id>
+> docker stop <name>
+> docker ps -a
+
+Q. how to give custom docker name
+> docker run -d --rm --name "mywebapp" -p 3000:3000 <image id>
+> docker stop <name>             //[docker stop mywebapp] 
+
+----------------------------------------------------
+Mangaging Docker Images
+
+how to give custome image name(repository name) and tag ?
+> docker build -t mywebapp:01
+> docker build -t mywebapp:02
+
+how to remove docker image 
+> docker rmi mywebapp:02
+
+--------------------------------------
+if any new modification  require on project
+then again need to build docker image
+
+> docker build -t mywebapp:02 .   //"."" is for current directory
+
+> docker run -d --rm --name "mywebapp" -p 3000:3000 <repository>:<tag>
+> docker run -d --rm --name "mywebapp" -p 3002:3000 mywebapp:02
+
+for comparision run previos image also
+> docker run -d --rm --name "mywebapp01" -p 3001:3000 mywebapp:01
+
+run on browser both the instances
+
+---------------------------------------------
+Predefined Image
+
+
+>docker pull nginx
+>docker run -p 8080:80 nginx:latest
+check in browser with localhost:8080
+
+-----------------------------------------------
+Docker container with interactive mode
+
+create a project using java/python
+write some build code.(input output code)
+
+create a docker file
+---------------------
+> FROM python
+
+> WORKDIR /myapp
+
+> COPY ./mainTest.py .  //[mainTest has main method for taking input and output file and it wil copy the file to "." means current working dir(myapp)]
+> CMD["python","myapp.py"]
+
+---------------------------
+build the docker image
+> docker build .
+> docker image ls
+> docker run <image id>
+  Error: it will asking terminal for input
+  Solution:
+  >docker run -it <image id>
+  ----------------------------------------------------
+Sharing Image Docker HUB
+
+create a docker account in dockerhub
+create a docker repository in dockerhub
+set login username password in local for push and pull operation.
+> docker login
+  username:
+  password:
+  $successful.
+> docker push vicky/webapp:02 // for push docker image to dockerhub
+Q. how to change existing image name to new name
+ > docker tag <existing repoitory_name>:<tag>  <new repository_name>:<tag>
+ > docker tag webapp:02 vicky/newapp:02
+ > docker push vicky/newapp:02
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

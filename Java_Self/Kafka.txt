@@ -1,0 +1,44 @@
+> Need Of Messaging systems
+> Apache kafka introduction
+> Kafka Terminology
+> Apache Kafka Use cases
+> Apache kafka Installation
+> Apache Kafka Integration with Spring boot live Demo
+
+
+1. What is Event Stream?
+ - Event streaming is the practice of capturing data in  realtime from event sources.
+ - Sources can be databases,sensors,mobile devices, cloud services and software applications.
+ - Storing these event streams durably for later retrieval, manipulating, processing and reacting to the event streams in realtime as well as retrospectively . and routing the event stream to different destination technologies as needed.
+ - Using Event Stream we can keep right information at right place at right time.
+
+ 2. Why Messaging Systems ?
+ - Problem : Collecting all the data is not easy as data is generated from various sources in different formats
+ - Solution : One of the ways to solve this problem is to use messaging system. Messaging systems provide a seamless integration between distributed applications with the help of messages.
+
+ 3. What is Apache kafka ?
+ - Apache kafka is distibuted streaming platform
+ - Apache kafka is used to process real time data feeds with high throughput and low letency
+   Ex- Flights data, sensors data, stocks data, news data, user activities etc...
+ - Kafka works based on publisher and subscriber model
+ - kafka was originally developed at linkedin in 2011
+
+ 4. How kafka works ?
+ - Apache kafka is a distibuted streaming platform
+ - At its core, it allows systems that generate data(called producers) to persist their data in realtime in an apache kafka topic.
+ - Any topic can then be read by any number of systems who need that data in real-time(called consumers)
+ - Kafka is a Pub/Sub system. Behind the scenes, kafka is distributed, scales well , replicates data across brokers ( servers), can survive broker downtime and much more.
+
+ Kafka core apis
+ ---------------
+ 1. Producer API
+ 2. Consumer API
+ 3. Streams API
+ 4. Connector API
+
+ Kafka Installation
+ ------------------
+ Download and run zookeeper
+ Download and run Apache kafka server
+ Create Topic in Apache Kafka
+  

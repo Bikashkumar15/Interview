@@ -1,0 +1,41 @@
+Docker installation on Mac,Windows & Linux
+Creating Demo project on node and python
+Creating DockerFile
+Creating Docker Image
+Running Containers
+Pre-defined Images
+DockerHub
+Docker Volumes and Network
+Docker Compose
+
+What is container? 
+A way to package an application with all the necessary dependencies and configuration.
+it can be easily shared
+Makes deployment and development efficient.
+
+
+what is dockerfile?
+It is a simple text file with instructions to build an image.
+
+
+What is image?
+Single file with all the dependencies and library to run the program.
+
+what is docker registry?
+a docker registry is a central repository for storing and distributing docker images.
+
+
+commands for docker
+-----------------------
+docker -v
+
+docker ps
+
+
+linux
+-----
+start docker app in linux
+$ systemctl start docker.service
+status check of docker
+$ systemctl status docker.service 
+$ docker ps

@@ -1,0 +1,50 @@
+Ways to communicate between microservices
+-----------------------------------------
+We have synchronous communication through:-
+Rest APIs
+GraphQL
+Feign using Eureka discoveries
+GRPC
+
+Synchronous call means that a service waits for the response after performing a request.
+
+Today we will look at ways to do asynchronous communication in java.
+This communication usually involves some kind of messaging system like.
+Active MQ
+Rabbit MQ
+Kafka
+
+Commonly thre are two options in message-based communications:
+->point to point (QUEUE)
+->publisher-subscriber(TOPIC)
+
+What is PTP Async communication:-
+--------------------------------
+-> PTP a queue will be use for this type of messaging-based communication.
+-> The service that produces the message,which is called as producer(sender), will send the message to a queue
+in one message broker and the service that has an interest in that message.which is called consumer(receiver). will
+consume the message from that queue and carry out further processes for that message.
+-> One message sent by a producer can be consumed by only one receiver and the message will be deleted after consumed.
+-> If the receiver or an intersted service is down, the message will remain presistent in that queue 
+until the receiver is up and consumes the message.
+-> For this reason, messaging-based communication is one of the best choice to make our microservices resilient.
+-> A popular choice for the queueing system is RabbitMQ and ActiveMQ
+
+What is Publisher-Subscriber Async communication:-
+------------------------------------------------
+->In publisher-subscriber messaging-based communication, the topic in the message broker will be used to store the message sent by the publisher and then
+subscriber that subscribe to that topic will consume that message.
+->Unlike PTP pattern, the message will be ready to consume for all subscriber  and the topic can have one or more subscribers. 
+the message remains persistent in a topic until we delete it.
+->In messaging-based communication, the services that consume messages, either from queue or topic must know the common message
+structure that is produced or published by producer or publisher.
+-> example ar kafka, amazon sns.
+
+ 
+What is Event Based Async Communication
+----------------------------------------
+1. Unlike messaging-based communication,in event-based communication,especially in event-driven pattern,
+the services that comsume the message do not need to know the details of the message.
+2. In event-driven pattern, the services just push the event to the topic in the message broker and then the 
+services that subscribe to that topic will react for each occurrence event in that topic .
+Each event in the topic will be related to a specific business logic execution.

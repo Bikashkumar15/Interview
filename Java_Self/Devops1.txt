@@ -1,0 +1,31 @@
+Devops Definition:
+-------------------
+it is a culture or is a process of improves the organizational's ability to delivery the application
+i mean making your delivery quicker by ensuring that there
+is a proper automation you have ensured that the quality is in place you have
+ensured that you have set up proper monitoring and you have ensured that you have a
+continuous testing.
+
+1. automation
+2. quality
+3. continuous monitoring
+4. continuous testing
+
+Why Devops
+----------
+To improve the process of delivery
+system admin
+tester
+bulid and release engineer
+etc
+10 years back process
+
+Explain what is your current expeience in devops
+Explain where what is the backgroud that you are coming from and 
+then include these key factors
+i take care of automation i ensure that there is a
+quality that i am maintaing for the application
+i ensure that i have set up consinuous monitoring and i have a
+automated the testing process into the devops 
+lifecycle.
+

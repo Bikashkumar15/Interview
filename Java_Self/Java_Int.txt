@@ -1,0 +1,2 @@
+@RestContoller marked components usually returns a Json object/String
+@Controller marked classes returns a String which resolves through a view resolver.

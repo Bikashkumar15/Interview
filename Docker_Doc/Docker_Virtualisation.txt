@@ -1,0 +1,36 @@
+Virtualization:-
+----------------
+It is the technique of splitting a physical resource into as many logical resource as we want.
+ex: cpu
+Virtualization is a technology to transform hardware into software.
+
+Hypervisor is a piece of software or firmware that create and run virtual machine hypervisor is sometimes also called a virtual machine manager.
+
+Types of Hypervisor
+1. Type-1 Hypervisor/Bare Metal/ Native Hypervisor
+ Defination: 
+ -> it run directly on the system hardware . a guest OS runs on another level above the hypervisor.
+ -> VMware ESXi is a Type-1 hypervisor that runs on the host server hardware without an underlying OS
+ -> Type-1 Hypervisor act as their own OS.
+ -> ESXi provides a virtualization layer that abstracts the CPU,storage,memory and networking resources of the physical host into multiple virtual machine.
+2. Type-2 Hypervisor/Hosted Hypervisor
+Defination:
+->Hypervisor that runs within a conventional OS environment, and the host OS provides
+-> Ex VMware workstatin, Oracle VirtualBox,,Microsoftwa virtual PC
+->It foes not have direct access to the host hardware and resources.
+
+Docker
+---------
+Defination:
+-> Docker is an open-source centralised platform designed to create,deploy and run application.
+-> Docker uses container on the host OS to run application .it allows application to use the same linux kernel as a system on the host computer, rather than creating a whole virtual OS.
+-> WE can install docker on any OS but docker engine runs natively on linux distribution.
+-> Docker written in  "Go" langualge.
+-> Docker is atool that perform OS level virtualization , also known as containerzation.
+-> Before docker, many user faces the problem that a particular code is running in the developers system but not in the User's system.
+-> Docker was first release in march 2013.
+It is developed by solomin hykes and sebstian pahi.
+-> Docker is a set of platform as a service that user OS level virtualization where as vmware uses hardware level virtualization.
+
+
+ 

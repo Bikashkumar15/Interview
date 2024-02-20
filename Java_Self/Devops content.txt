@@ -1,0 +1,232 @@
+DAY-1
+-----
+What is DevOps?
+-Understanding the background
+-How to answer what is DevOps in an Interview
+
+Why DevOps ?
+-What happens if there is no DevOps ?
+-How were companies managing before the existence of devops ?
+-What will you achieve with DevOps ?
+
+Day - 2
+--------
+What is SDLC ?
+ -Why is it important for a DevOps Engineer ?
+ -Where does DevOps fit in SDLC ?
+ -Can DevOps improve the SDLC process ?
+Real Time Project explanation for DevOps and SDLC with DevOps
+
+Day - 3
+-------
+Virtual Machines
+- What is a Server?
+- Physical Server vs Virtual Machine?
+- How Virtual Machines took over the world of Individual Data Centre ?
+- What is a Hypervisor ?
+- How to create a Virtual Machine ?
+- Different ways to create a VM ?
+
+Real Time Project requirements for a VM and how to solve them ?
+
+Day -4
+------
+Continuation of Virtual Machines
+ - Create a Virtual Machine on AWS
+ - Create a Virtual Machine on Azure
+ - How to automate the process ?
+
+
+Day - 5
+-------
+Basics of Linux
+ - Fundamentals of Linux OS
+ - Comparision between windows and linux to get comfortable with linux
+
+Why Linux is widely used over windows and other OS in Production systems
+
+Day - 6
+-------
+Shell Scripting
+-Basics of Shell Scripting
+-Getting used to some popular Shell commands
+-Creating a file
+-Creating a directory
+-File Permissions
+-Listing Files and Folders
+-How to read and Write a file
+-How to search a string in a file
+-Writing a simple shell scrip
+
+
+Day -7
+------
+Advanced Shell Scripting
+
+Real Time project use-causes
+- How to deal with memory issues
+- Scripts to monitor your production systems?
+- Scripts to automate some regular activities of a Devops Engineer
+
+Day - 8
+-------
+Shell Scpriting Interview Questions with Answers
+
+Some sample questions
+ -Read a log file and print the count of Errors in the logfile?
+ -Replace a specific string with multiple occurrences in a file?(replace foo withe bar)
+ -Write a calculator application using Shell scripting? 
+
+Day -9
+------
+Version Control System
+-Why do we need a Version Control System?
+-History of Version Control System?
+-Centralized vs Distributed Version Control System ? which is better?
+
+GIT
+-Why is GIT so popular
+-Hosting our own GIT systems
+-How does GIT work and what is .git ?
+
+
+Day -10
+-------
+GIT commands 
+-most popular git commands
+-git for devops engineers
+GitHub
+-What is GitHub?
+-Git vs GitHub
+-Additional Features
+
+Day -11 
+-------
+GitHub
+Real Time Project Implementation in GitHub
+- How organizations use GitHub 
+- Features of GitHub for collaboration
+- Teams and organizations
+- Issues
+- Pull Requests
+- Webhooks
+
+Day - 12
+--------
+Basic of AWS
+- Introduction to PAAS,IAAS,SAAS(More focus on PAAS and IAAS)
+- AWS(Basics)
+- AWS EC2 and its configuration
+- AWS CLI
+- Create Multiple EC2 instances
+
+Day - 13 & 14
+-------------
+Configuration Management
+- Configuration Management 
+- Ansible -Basics,Set-up
+- Ansible Roles
+- Ansible -Build Live Projects
+
+Ansible Tower
+
+Problems with Ansible
+
+Day 15 &  16
+------------
+Infrastructure as Code
+- Terraform 101
+- Terraform State file
+- Terraform Basics and Setup
+- Build Live Project
+- Problems with Terraform
+
+Modern day IaC tools and how they aim to solve problem with Terraform
+- CrossPlane
+
+DAY 17 18 & 19
+---------------
+AWS Intermediate Level
+- AWS - Introduction to all the servies
+- AWS(Private,public and Hybrid clouds)
+- AWS -EC2, EBS, Elastic IP, Lambda Functions, VPC and more
+Real Time Project Implementations
+- How to save cost for your organizations
+- How to keep the AWS ecosystem secure
+- Secret Management
+- Building Public Private systems
+
+Day - 20
+--------
+Project Management
+-Internal Tracking tools(Jira,Rally)
+-Basic of Confluence,Sharepoint
+
+Day -21 , 22, 23 & 24
+----------------------
+CI/CD
+-What is CI/CD ?
+-Complete Understating of Build Process
+-CI/CD -(Basic)
+-CI/CD - Introduction to various CI/CD tools
+
+CI/CD- Build Live Projects using Jenkins
+CI/CD - Build Live Projects using GitHub Actions
+
+CI/CD interview Questions
+
+DAY - 25
+---------
+Reporting and Escalations
+-Service Now(Change Management,Incident Management)
+-Release Process - Live Demo in GitHub
+
+DAY - 26 27 28  & 29
+--------------------
+Containerization
+-Introduction to the world of containers
+-Containers vs VMs
+Docker (Basics)
+- Writing Dockerfiles
+- Building
+- Deploying
+Docker Build Live Projects
+How to build multi statge Docker files
+Docker mounts and volumes
+Docker compose
+
+
+DAY- 30 31 32 33 & 34
+---------------------
+Container Orchestration Environments
+
+Kubernetes basic
+ -Architecture
+Kubernetes Installation and Set-up
+Kubernetes Deep dive into
+- Pods,Deployments and services
+Kubernetes Advanced- Service Account,RBAC,Ingress
+Kubernetes -Build Live Projects
+
+Day - 35 & 36
+-------------
+CI/CD with AWS tools
+- AWS codebuild
+- AWS codepipeline
+Elastic Load Balancers
+EKS - Amazon kubernetes services
+Multi Region,fail over, backups
+cost optimization
+
+Day - 37 & 38
+-------------
+How to build monitoring system
+How to monitor your application for failovers,failure,crashes and etc
+How to monitor you cloud infrastructure
+How to monitor your kubernetes clusters effectively
+Observabillity
+Reporting
+
+Day 39 & 40 
+-----------
+Devops interview Q&A
