@@ -27,12 +27,17 @@
  * The process of dynamically locating and communicating with services.(discovery is nothing but actually we are going to maintain all the services information so that they can communicate with each other at runtime dynamically)
 * In Spring Cloud, service discovery is achieved using Netflix Eureka or Consul.(information where they are running how many times they are running, if they want to communicate with each other it will provede details.)
 * Allows services to register themselves and discover other services, enabling communication between microservices.
-
+ * In the microservices projects, Service Registry and Discovery play an important role because we most likely run multiple instance of servies and we need a mechanism to call other services without hardcoding their hostname or port no.
+* In additon to that , in Cloud evnironment service instance may come up and go down anytime. so we need some auromatic service registration and discovery mechanism.
+* Spring cloud address this problem by providing Spring Cloud Netflix Eureka project to create Service Registry and Discovery.
 6. Explain the role of API gateways in microservies.
 * Act as a single entry point for client requests to microservies.(there should be one entry one exit concept for all our microservies when ever client made request.)
 * Handle dynamic routing , load balancing.( when a request is made by client it has to choose one instance that has less load factor and execute that microservice get the response and give it back to client application )
 * The Gateway(old one is zuul) library is used to implement API gateways.
 * Support integration with service discovery and authentication.
+* Api gateway provides unified interface for a set of microservice so that clients no need to know about all the details of microservice internals.
+* API Gateway centralize cross-cutting concerns like security,monitoring, rate limiting etc.
+* Spring Cloud provides Spring Cloud Gateway to create API Gateway.
 
 7. What is circuit breaking, and how is it implemented using spring cloud?
 * It is pattern that prevents cascading failures in microservies.(ex- MS1 is connected to MS2 and that is connected to MS3  and so on. if ms2 is failed ms3,ms4,ms4 execution may get failed so we should avoid executing of all those microservies from the failure point onwards. that is called circuit breaking).
@@ -125,12 +130,95 @@ It is lightweight and portable environment for packaging and deploying microserv
 
 23. What are the main components of Microservices
  Some of the main components of microservices include:
-* Containers, Clustering and Or
+* Containers, Clustering and Orchestration
+* IaC(Infrastructure as Code Conception)
+* Cloud Infrastructure
+* API Gateway
+* Enterprise Service Bus
+* Service Delivery
+
+24. Explain the working of Microservice Architecture.
+
+25. What are the differences between Monolithic,SOA and Microservices Architecture.
+* Monolithic Architecture: It is "Like a big container" where all the software components of an application are bundled together tightly. it is usually built as one large system and is one code-base.
+* Service-Oriented Architecture(SOA): It is a group of service interactiong or communicating with each other. Depending on the nature of the communication. it can be simple data exchange or it could involve several services coordinating some activity.
+* Microservice Architecture: It involves structuring and application in the form of a cluster of small, autonomous services modeled around a business domain. The functional modules can be deployed independently, are scalable, are aimed at achieving specific business goals, and communicate with each other over standard protocols.
+
+26. Explain Spring cloud and spring boot.
+* Spring Cloud: In microservice, the Spring Cloud is a system that integrates with external systems.This is a short-lived framework designed to build application quickly. It contributes significantly to microservice architecture due to its association with finite amount of data processing.
+* Spring boot:Spring boot is an open-sourced,java-based framework that provides its developer with a platform on which they can create stand-alone, production-grade spring application.
+
+27. What is the role of actuator in Spring boot/
+* A spring boot actuator is a project that provides restful web service to access the current state of an application that is running in production.In addition , you can monitor and manage application usage in a production environment without having to code or configure any of the application.
+
+28. Explain how you can override the default properties of Spring boot projects.
+* By specifying properties in the application.properties file, it is possible ot override the default properties of a spring boot project.
+Ex: In spring MVC application, you need to specify a suffix and prefix.You can do this by adding the properties listed below in the application properties file.
+* For suffix - spring.mvc.view.suffix:.jsp
+* for prefix - spring.mvc.view.prefix:/WEB-INF/
+
+29. What do you mean by Cohesion and Coupling?
+* Cohesion: It is defined as a relationship between two or more parts/elements of a module that serves the same purpose. Generally, a module with high cohesion can perform a specific function effciently without needing communication with any other modules. High cohesion enhances the functionality of the module.
+Coupling: It is defined as a relationship between software modules A and B. and how much one moudle depends or interacts with another one.Couplings fall into three major categories. Modules can be highly coupled(highly dependent),loosely coupled, and uncoupled from each other. The best kind of coupling is loose coupling, which is achieved through interfaces.
+
+30. What are the fundamental characteristics of Microservie Design.
+* Based on Business Capabilities
+* Products not Projects
+* Essential messaging frameworks
+* Decentralized Governance
+* Decentralized Data management
+* Automated Infrastructure
+* Design for failure
+
+31. Explain PACT in microservices?
+* PACT is defined as an open-source tool that allows service provider and consumer to test interaction in isolation against contracts that have been made to increase the reliabilty of microservie integration.It also offers support for numerous languages , such as Ruby,Java,Scala,.net,javascript.
+
+32. Explain how independent microservice communicated with each other.
+* Communication between microservices can take place through.
+  HTTP/REST with JSON or binary protocol for request -response
+  Websockets for streaming
+  A broker or server program that uses advanced routing algorithms.
+* RabbitMQ,Kafka,Nats etc can be used as message broker. each is built to handle a particular message semantic. You can also use Backend as service like space cloud to automate your entire backend.
+
+33. What do you mean be domain driven design?
+* Concentrate on the core domain and domain logic.
+* Analyze domain models to find complex designs.
+* Engage in regular collaboration with the domain experts to improve the application model and address emerging domain issues.
+
+34. Explain OAuth. ?
+* Generally speaking OAuth(Open Authorization Protocol) enables users to authenticate themselves with 3rd party service providers. With this protocol,you can access client application on HTTP for 3rd party providers such as GitHub,Facebook etc.Using it you can also share resource on one site with another side without requiring their credentials.
+
+35. Explain the importance of reports and dashboards in microservices.?
+* Monitoring a system usually involves the use of reports and dashboard for microsercice can help you: 
+-Determine which microservice support which resource.
+-Determine which services are impacted whenever changes are made or occur to components
+-Make documentation easy to access whenever needed.
+-Review deployed component versions.
+-Determine the level of maturity and compliance from the components.
+
+36. What are Reactive Externsion in Microservices?
+* A reactive extension , also known as Rx, is basically a design approach that calls multiple services and then generates a single response by combining the results. The calls can either be blocking or not blocking, synchronous or asynchronous. A popular tool in distributed system, Rx works exactly opposite to legacy flows.
+
+37.Explain type of tests mostly used in Microservie.
+* As there are multiple microservices working together, microservice testing becames quite complex when working with microservices. Consequently, tests are categorized according to their level.
+1. Unit Test
+2. Integration Test
+3. System Test
+
+38. Explain Container in Microservies.
+* Container are useful technologies for allocating and sharing resources. It is considered the most effective and easiest method for managing microservice-based applications to develop and deploy them individually.
+
+39.What is the main Role of docker in microservices?
+* Docker generally provides a container environment, in which any application can be hosted. This is accomplished by tightly packaging both the application and the dependencies required to support it. These packaged products are referred to as containers and since docker is used to doing that, they are called docler containers. Docker, in essence, allows you to containerize your microservices and manage these microservices more easily.
+
+40. What do you mean by Mike Cohn's Test Pyramid?
+* Mike Cohn's Test Pyramid explains the different types of automated tests needed for software developement.
+1. Unit Test: Result of Test Driven Development
+2. Service Test: Tests the services directly under different inputs
+3. End-to-End Test: Run against the entire system including UI front-end aor 3rd party clients.
 
 
-https://www.youtube.com/watch?v=UVQGVs1mSjQ
 
-https://www.youtube.com/watch?v=O90Tr2zXqR4
 
 
 
