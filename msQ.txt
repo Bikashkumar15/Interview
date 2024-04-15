@@ -1,0 +1,147 @@
+1. What is microservice Architecture?
+* It is an architecture to develop complex application.
+* These built as a collection of samll, independent services which can be developed and deployed independently.
+* These services communicate with each other throuogh apis.
+* It is a modular and decoupled architecture.
+
+2. What are the benefits of using a microservies architecture?
+* Microservices architecure offers benefits such as:
+ - Scalablity(Scale Up/Down and Scale In/Out) we can also called horizontal scaling and vertical scaling.
+ - Resilience(Reduce Cascading Failures)
+ - Flexibility,faster development cycles.
+ - Easier maintenance due to its modular and independent nature.
+
+3. Explain SOLID principle ?
+* Single Responsibility Principle(SRP): A class should have only one reason to change, meaning it should have a single responsibility or job.( One class or one restcontroller that is going to handle only one type of operation all exployee operations one rest controller all product operation one rest controller like we have to define individual classes those will perform the specific operation to that module. )
+* Open-Closed Principle(OCP): Software entities should be open for extension but closed for modification.
+* Liskov Substitution Principle(LSP): Objects of a super class shold be able to be replaced with objects of its subclasses without breaking the behavior of the program.
+* Interface Segregation Principle (ISP): Creation of smaller, more cohesive interfaces instead of large ones that cover multiple scenarios.(don't wite one interface that contains all the requirements you divide into multiple interfaces so that can specify what are the requirements you have those interface only used. )
+* Dependency Inversion Principle(DIP): This principle encourages the use of interface and dependency injection to decouple modules and make them more reusable and testable.
+
+4. What is Spring Cloud and what are its key features?
+* Spring Cloud is a framework built on top of Spring boot.
+* Used for development and deployment of microservices.
+* key features: service discovery and registration, load balancing,circuit breaking,distributed configuration,API gateway, and distributed tracing.
+
+5. What is service discovery, how is it achieved in spring cloud ?
+ * The process of dynamically locating and communicating with services.(discovery is nothing but actually we are going to maintain all the services information so that they can communicate with each other at runtime dynamically)
+* In Spring Cloud, service discovery is achieved using Netflix Eureka or Consul.(information where they are running how many times they are running, if they want to communicate with each other it will provede details.)
+* Allows services to register themselves and discover other services, enabling communication between microservices.
+
+6. Explain the role of API gateways in microservies.
+* Act as a single entry point for client requests to microservies.(there should be one entry one exit concept for all our microservies when ever client made request.)
+* Handle dynamic routing , load balancing.( when a request is made by client it has to choose one instance that has less load factor and execute that microservice get the response and give it back to client application )
+* The Gateway(old one is zuul) library is used to implement API gateways.
+* Support integration with service discovery and authentication.
+
+7. What is circuit breaking, and how is it implemented using spring cloud?
+* It is pattern that prevents cascading failures in microservies.(ex- MS1 is connected to MS2 and that is connected to MS3  and so on. if ms2 is failed ms3,ms4,ms4 execution may get failed so we should avoid executing of all those microservies from the failure point onwards. that is called circuit breaking).
+* Circuit breaking is implemented using the netflix hystrix library/ Resillence4J.
+* Monitors the health of dependent services and if failure occur, opens the circuit to stop sending requests.(we can monitor the health and we can specify how many time failures occurred there is a concept called circuit open and circuit close. if it is closed allow execution of microservices open means dont allow.)
+* It ensuing the overall system stability.(final meaing of circuit breaking is actually maintain the statble system instead of making all exception and issues just keep it in a stable form )
+
+8. What is load balancing, and how is it handled in microservices ?
+* Distribution of client request across multiple instances of a service.(if you have a service that is running at multiple times if a client made request multiple times that should be distributed to all the services equally that is actually distribution of client request )
+* Spring cloud integrates with load balancers like Netflix Ribbon/Cloud Load balancer.
+* These are client-side load balancing.
+* Handle load distribution without manual configuration.
+
+9. What are tools used to arrgegated microservice log files ?
+* ELS Stack(Elasticsearch,logstash,kibana): Logstash is responsible for collecting and parsing log data. Elasticsearch indexes and stores the logs, and kibana is a interface for log visualization and analysis.
+* Splunk: Splunk is a powerful commercial tool that enables log aggregation, searching, monitoring, and analysis. It offers features like real-time alerts, dashboard, and machine learning capabilities for log data.
+* Fluentd: Fluentd is an open-source data collector that can aggregate and route log data from various sources to different destinations.
+
+10. What is distributed tracing, and how is it implemented in spring cloud?
+* It is a technique used to track and monitor request as they flow through multiple microservices.(multiple microservice are executed for a request i just want to know what is the path that they executed and how many they executed. it's a technique to track and monitor the request flow through multiple microservice)
+* It is implemented through integratin with tracing systems:Zipkin.
+* Sleuth used for tracing information across microservice, transferred to Zipkin server using zipkin client.
+
+11. What is the purpose of Spring cloud config, and how does it work?
+* It is centralized management of configuration properties for microservices.(if you hava a common property for all multiple services then you can use this mechanism).
+* It uses configurations in a version-controlled repository and provides a configuration server.
+* Microservice can retrieve their configuration information from the server at runtime, enabling dynamic and centralized configuration.
+
+12. What are different types of spring cloud config?
+* Local file system. Configuration properties can be stored in a local file system. The configuration files are typically in YAML or properties format.
+* Git: Microservies can retrieve the configuration from the specified git repository, allowing for version control and easy management.
+* HashiCorp Vault: Configuration properties can be stored securely in Vault, and the spring Cloud config server can retrieve them using appropriate authentication and authorization mechanisms.
+
+13. Whatare the diffeent approaches form inter-service communication in microservice?
+* The different approaches for inter-service communication in microservices include synchronous communication through HTTP/REST APIs.(rest template, web clients )
+* Asynchronous messaging using message brokers like RabbitMQ or Apache kafka.
+* Event-driven communication using event buses or pub/sub mechanisms.
+
+14. What is service orchestration and servie choreography in microservies?
+* Service orchestration is a centralized approach where a central component controls and coordinates the execution flow of microservices.
+* In contrast, service choreography is a decentralized approach where microservices collaborate with each other directly, without a central controller.
+* Service orchestration provides a more controlled and coordinated workflow, while service choreography offers greater flexibility to individual services.
+
+15. What is the role of containers and container orchestration platforms ?
+It is lightweight and portable environment for packaging and deploying microservices.(we are packing our microservice with all dependence these are actually lightweight and portable environment. here environment means you can run your application wherever you want .can linux,mac,window,onpremises cloud env easy to run the application )
+* Consistency across different environments.
+* Orchestration platforms, such as kebernetes and docker swarm, automate the management of containers at scale.
+* They handle tasks like deployemnt,scaling, service discovery, load balancing, and fault tolerance in a distributed environment.
+
+16. Explain the concept of event-driven architecture and how spring cloud support it ?
+* Used for service communicate and react to events asynchronously.(to connect ms communication in asynchronous manner )
+* Spring cloud provides support for event dirven architecture through its integration with messaging systems like RabbitMQ or kafka.
+* Spring cloud stream and spring cloud bus enable the implementation of event-driven patterns.
+* Allowing service to publish and subscribe to events, faciliting loose coupling and scalability in the system.
+
+17. What are the challeges and consideration for testing microservices ?
+* Managing test data. (if you want to test a microservice lot of test data and setup is required .)
+* Orchestrating test environments, ensuing proper isolation,handling dependencies.(creating the test environment and running them and keeping them independent is a complicated)
+* Designing effective end-to-end tests.
+* Selecting appropriate testing frameworks.
+* Comprehensive test coverage across the distributed system.(there is a rule minimum 80% should be cover)
+
+18. How can you handle authentication in microservices ?
+* Spring cloud provide various mechanism to handle security and authentication in microservices.
+* Integration with Spring security,OAuth2,JWT
+* These tools enable implementing authentication and authorization mechanisms , securing endpoint, and manging user roles and permission across microservice.
+
+19. What is the role of centralized logging in microservices and how can it be achieved.?
+* It helps collect and analyze logs from different services.
+* Adding in monitoring,troubleshooting, and identifying issues acrosss the distributed system.
+* Spring cloud integrates with logging frameworks like ELK(Elasticsearch,Logstash,Kibana) or splunk, allowing aggregation and analysis of logs from microservices in a centralized manner.
+
+20. How does Spring Cloud handle service versioning and compatibility ?
+* Spring Cloud does not provide a built-in mechanism for service versioning.
+* It can be achieved through good API design practices such as using semantic versioning , backward compatibility and managing API contracts.
+* Tools like spring cloud contract can help verify compatibility between servive version by providing consumer-driven contract test.
+
+21. What do you mean by Microservice ?
+* It is basically an SDLC approach in which large application are built as a collection of small functional modules. it is one of the most widely adopted architectural concepts within software development.( for helping the easy maintenance. this arch makes development faster and it is also a very big asset fot the latest method of the software development such as devops and agile it also help to deliver large complex app and these are models that collection fo the services.)
+
+22. What are the main feature of Microservices.
+* Decoupling
+* Componentization
+* Business Capabilities
+* Autonomy
+* Continious Delivery
+* Responsibility
+* Decentralized Governance
+* Agility
+
+23. What are the main components of Microservices
+ Some of the main components of microservices include:
+* Containers, Clustering and Or
+
+
+https://www.youtube.com/watch?v=UVQGVs1mSjQ
+
+https://www.youtube.com/watch?v=O90Tr2zXqR4
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+ 

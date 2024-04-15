@@ -1,0 +1,13 @@
+Service Registre
+admin server
+zipkin server
+config server
+feign client for inter service communication
+api gateway with filter and routing
+how to distibute the load with loadbalancer
+how to secure microservice by jwt
+how to develop eventdriven service by kafka
+how to improve the performance by using redic cache
+how to centralize logs of microservice by using ELKs
+how to deply the microservice with docker
+how to orchestrate our microservice.
